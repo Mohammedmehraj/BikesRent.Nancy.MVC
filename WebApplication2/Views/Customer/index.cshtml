@@ -1,0 +1,56 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<WebApplication2.Models.Customer>>
+
+@{
+
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Customers</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/customer/new" class="btn btn-default">New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-2">Id</th>
+                        <th class="col-md-2">FirstName</th>
+                        <th class="col-md-2">Lastname </th>
+                        <th class="col-md-2">Phoneno</th>
+                        <th class="col-md-2">Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-2">@item.Id</td>
+                            <td class="col-md-2">@item.Firstname</td>
+                            <td class="col-md-2">@item.Lastname</td>
+                            <td class="col-md-2">@item.Phoneno</td>
+                            <td class="col-md-2">@item.Address</td>
+                            <td class="col-md-2">
+                                <a href="/customer/update/@item.Id" class="btn btn-xs btn-primary">Edit</a>
+                                @*<a href="/category/delete/@item.Id" data-method="delete" class="btn btn-xs btn-danger">Delete</a>*@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div>
+

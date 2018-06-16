@@ -1,0 +1,50 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<WebApplication2.Models.Bikes>>
+
+@{
+
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Bikes</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/bikes/new" class="btn btn-default">New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-2">Bikecategory</th>
+                        <th class="col-md-2">Bikename </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-2">@item.Bikecategory</td>
+                            <td class="col-md-2">@item.BikeName</td>
+                            <td class="col-md-2">
+                                @*<a href="/customer/update/@item.Id" class="btn btn-xs btn-primary">Edit</a>*@
+                                @*<a href="/category/delete/@item.Id" data-method="delete" class="btn btn-xs btn-danger">Delete</a>*@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div>
+

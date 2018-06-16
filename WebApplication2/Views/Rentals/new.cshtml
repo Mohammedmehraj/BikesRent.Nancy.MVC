@@ -1,0 +1,114 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<WebApplication2.Models.Customer>>
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase
+@{
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+@*<script src="~/Content/js/jquery/jquery-1.11.3.min.js"></script>*@
+@*<script src="~/Content/js/boostrap/moment.min.js"></script>
+    <script src="~/Content/js/boostrap/bootstrap.min.js"></script>
+    <script src="~/Content/js/boostrap/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/Content/css/bootstrap-datetimepicker.css" rel="stylesheet" />*@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Rent A Bike</h2>
+        </div>
+    </div>
+    @if (ViewBag.ValidationError != null)
+    {
+        <div class="alert-error">
+            <p>Error! @ViewBag.ValidationError</p>
+        </div>
+    }
+   
+    <div class="row">
+        
+        <div class="col-md-3">     
+            <input name="Customerid" type="text" class="form-control" placeholder="Please Enter the CustomerId" id="customerid">
+        </div>
+        <div class="col-md-3">
+            <button id="getcustomers" class="btn btn-primary btn-sm">Fetch</button>
+        </div>
+
+        </div>
+
+    <div class="row">
+
+        <div class="col-md-12">
+      
+            <form method="POST" action="/rentals/new" class="form-horizontal">
+                @*<input type="hidden" name="id" value="" id="id" />*@
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Firstname">First Name</label>
+                        <input name="Firstname" type="text" class="form-control" readonly placeholder="Firstname" id="firstname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Lastname">Last Name</label>
+                        <input name="Lastname" type="text" class="form-control" readonly placeholder="Lastname" id="lastname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Phoneno">Phone no</label>
+                        <input name="Phoneno" type="text" class="form-control" readonly placeholder="Phoneno" id="phoneno">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Fromdate">Rent From</label>
+                        <div class='input-group date' id='datetimepicker1'>
+                            <input name="Fromdate" type='text' class="form-control" id="fromdate" placeholder="Rent From" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Todate">Rent To</label>
+                        <div class='input-group date' id='datetimepicker2'>
+                            <input name="Todate" type='text' class="form-control" id="todate"  placeholder="Rent To"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Bikes">Bikes</label>
+                        <div class="selector">
+                            <select name="Bike" id="items" class="form-control"></select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="~/Content/js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="~/Content/js/boostrap/moment.min.js"></script>
+<script type="text/javascript" src="~/Content/js/boostrap/bootstrap.min.js"></script>
+<script src="~/Content/js/boostrap/bootstrap-datetimepicker.min.js"></script>
+<link href="~/Content/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Content/js/jquery/ProjectScript.js"></script>
+
+

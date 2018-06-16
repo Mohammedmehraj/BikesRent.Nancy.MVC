@@ -1,0 +1,68 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<WebApplication2.Models.Bikes>>
+@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase
+@{
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+@*<script src="~/Content/js/jquery/jquery-1.11.3.min.js"></script>*@
+@*<script src="~/Content/js/boostrap/moment.min.js"></script>
+    <script src="~/Content/js/boostrap/bootstrap.min.js"></script>
+    <script src="~/Content/js/boostrap/bootstrap-datetimepicker.min.js"></script>
+    <link href="~/Content/css/bootstrap-datetimepicker.css" rel="stylesheet" />*@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Save Bikes</h2>
+        </div>
+    </div>
+    @if (ViewBag.ValidationError != null)
+    {
+        <div class="alert-error">
+            <p>Error! @ViewBag.ValidationError</p>
+        </div>
+    }
+
+
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+            <form method="POST" action="/bikes/add" class="form-horizontal">
+                @*<input type="hidden" name="id" value="" id="id" />*@
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Bikecategory">BikeCategory</label>
+                        <input name="Bikecategory" type="text" class="form-control"  placeholder="Bike Category">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <label for="Bikename">Bike Name</label>
+                        <input name="BikeName" type="text" class="form-control"  placeholder="Bike Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <button class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+
+    </div>
+</div>
+
+
+<script type="text/javascript" src="~/Content/js/jquery/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="~/Content/js/boostrap/moment.min.js"></script>
+<script type="text/javascript" src="~/Content/js/boostrap/bootstrap.min.js"></script>
+<script src="~/Content/js/boostrap/bootstrap-datetimepicker.min.js"></script>
+<link href="~/Content/css/bootstrap-datetimepicker.css" rel="stylesheet" />
+<script src="~/Content/js/jquery/ProjectScript.js"></script>
+
+

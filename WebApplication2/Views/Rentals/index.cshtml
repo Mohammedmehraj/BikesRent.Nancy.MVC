@@ -1,0 +1,65 @@
+﻿@inherits Nancy.ViewEngines.Razor.NancyRazorViewBase<IList<WebApplication2.Models.Rentals>>
+
+@{
+
+    Layout = "Views/Layout/Base.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2 class="text-center">Rentals</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/add" class="btn btn-default">New</a>
+        </div>
+    </div>
+    <div id="error"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="col-md-2">Id</th>
+                        <th class="col-md-2">Fromdate </th>
+                        <th class="col-md-2">Todate</th>
+                        <th class="col-md-2">Firstname</th>
+                        <th class="col-md-2">Lastname</th>
+                        <th class="col-md-2">Phoneno</th>
+                        <th class="col-md-2">Bike Name</th>
+                        <th class="col-md-2">Createddate</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td class="col-md-2">@item.Id</td>
+                            <td class="col-md-2">@item.Fromdate</td>
+                            <td class="col-md-2">@item.Todate</td>
+                            <td class="col-md-2">@item.Firstname</td>
+                            <td class="col-md-2">@item.Lastname</td>
+                            <td class="col-md-2">@item.Phoneno</td>
+                            <td class="col-md-2">@item.Bike</td>
+                            <td class="col-md-2">@item.Createddate</td>
+
+                            <td class="col-md-2">
+                                @*<a href="/customer/update/@item.Id" class="btn btn-xs btn-primary">Edit</a>*@
+                                @*<a href="/category/delete/@item.Id" data-method="delete" class="btn btn-xs btn-danger">Delete</a>*@
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <a href="/" class="btn btn-default">Back</a>
+        </div>
+    </div>
+</div>
+
